@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Boston Housing Dataset</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        h3 {
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Random Forest Model</h2>
+    <form action="/" method="post">
+        CRIM - per capita crime rate by town: <input type="number" step="any" name="CRIM" required><br><br>    
+        ZN - proportion of residential land zoned for lots over 25,000 sq.ft.: <input type="number" step="any" name="ZN" required><br><br>            
+        INDUS - proportion of non-retail business acres per town: <input type="number" step="any" name="INDUS" required><br><br>    
+        CHAS - Charles River dummy variable (1 if tract bounds river; 0 otherwise): <input type="number" step="any" name="CHAS" required><br><br>
+        NOX - nitric oxides concentration (parts per 10 million): <input type="number" step="any" name="NOX" required><br><br>       
+        RM  - average number of rooms per dwelling: <input type="number" step="any" name="RM" required><br><br>
+        AGE - proportion of owner-occupied units built prior to 1940: <input type="number" step="any" name="AGE" required><br><br>
+        DIS - weighted distances to five Boston employment centres: <input type="number" step="any" name="DIS" required><br><br>
+        RAD - index of accessibility to radial highways: <input type="number" step="any" name="RAD" required><br><br>
+        TAX  - full-value property-tax rate per $10,000: <input type="number" step="any" name="TAX" required><br><br>
+        PTRATIO - pupil-teacher ratio by town: <input type="number" step="any" name="PTRATIO" required><br><br>
+        B - 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town: <input type="number" step="any" name="B" required><br><br>
+        LSTAT - % lower status of the population: <input type="number" step="any" name="LSTAT" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    {% if prediction !=0 %}
+        <h3>Prediction: {{ prediction }} </h3>
+    {% endif %}
+</body>   
+</html>
